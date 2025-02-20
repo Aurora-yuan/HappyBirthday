@@ -62,10 +62,10 @@ const animationTimeline = () => {
       opacity: 0,
       y: 10
     })
-    .from(".two", 0.4, {
-      opacity: 0,
-      y: 10
-    })
+    // .from(".two", 0.4, {
+    //   opacity: 0,
+    //   y: 10
+    // })
     .to(
       ".one",
       0.7,
@@ -75,15 +75,15 @@ const animationTimeline = () => {
       },
       "+=2.5"
     )
-    .to(
-      ".two",
-      0.7,
-      {
-        opacity: 0,
-        y: 10
-      },
-      "-=1"
-    )
+    // .to(
+    //   ".two",
+    //   0.7,
+    //   {
+    //     opacity: 0,
+    //     y: 10
+    //   },
+    //   "-=1"
+    // )
     .from(".three", 0.7, {
       opacity: 0,
       y: 10
@@ -112,9 +112,9 @@ const animationTimeline = () => {
       {
         visibility: "visible"
       },
-      2
+      0.05
     )
-    .to(".fake-btn", 1, {
+    .to(".fake-btn", 1.5, {
       backgroundColor: "rgb(127, 206, 248)"
     })
     .to(
@@ -143,7 +143,7 @@ const animationTimeline = () => {
     .to(".idea-4", 0.7, ideaTextTransLeave, "+=1.5")
     .from(
       ".idea-5",
-      1,
+      0.7,
       {
         rotationX: 15,
         rotationZ: -10,
@@ -152,7 +152,7 @@ const animationTimeline = () => {
         z: 10,
         opacity: 0
       },
-      "+=1.5"
+      "+=0.5"
     )
     .to(
       ".idea-5 .smiley",
