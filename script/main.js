@@ -108,7 +108,7 @@ const animationTimeline = () => {
     })
     .staggerTo(
       ".hbd-chatbox span",
-      0.5,
+      5,
       {
         visibility: "visible"
       },
@@ -125,7 +125,7 @@ const animationTimeline = () => {
         opacity: 0,
         y: -150
       },
-      "+=3"
+      "+=0.7"
     )
     // .from(".idea-1", 0.7, ideaTextTrans)
     // .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
