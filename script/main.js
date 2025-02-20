@@ -62,10 +62,10 @@ const animationTimeline = () => {
       opacity: 0,
       y: 10
     })
-    // .from(".two", 0.4, {
-    //   opacity: 0,
-    //   y: 10
-    // })
+    .from(".two", 0.4, {
+      opacity: 0,
+      y: 10
+    })
     .to(
       ".one",
       0.7,
@@ -75,15 +75,15 @@ const animationTimeline = () => {
       },
       "+=2.5"
     )
-    // .to(
-    //   ".two",
-    //   0.7,
-    //   {
-    //     opacity: 0,
-    //     y: 10
-    //   },
-    //   "-=1"
-    // )
+    .to(
+      ".two",
+      0.7,
+      {
+        opacity: 0,
+        y: 10
+      },
+      "-=1"
+    )
     .from(".three", 0.7, {
       opacity: 0,
       y: 10
@@ -112,9 +112,9 @@ const animationTimeline = () => {
       {
         visibility: "visible"
       },
-      "+=3"
+      2
     )
-    .to(".fake-btn", 0.7, {
+    .to(".fake-btn", 1, {
       backgroundColor: "rgb(127, 206, 248)"
     })
     .to(
