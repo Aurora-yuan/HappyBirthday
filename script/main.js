@@ -112,9 +112,9 @@ const animationTimeline = () => {
       {
         visibility: "visible"
       },
-      0.05
+      "+=3"
     )
-    .to(".fake-btn", 1.5, {
+    .to(".fake-btn", 0.7, {
       backgroundColor: "rgb(127, 206, 248)"
     })
     .to(
@@ -127,10 +127,10 @@ const animationTimeline = () => {
       },
       "+=0.7"
     )
-    .from(".idea-1", 0.7, ideaTextTrans)
-    .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
-    .from(".idea-2", 0.7, ideaTextTrans)
-    .to(".idea-2", 0.7, ideaTextTransLeave, "+=1.5")
+    // .from(".idea-1", 0.7, ideaTextTrans)
+    // .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
+    // .from(".idea-2", 0.7, ideaTextTrans)
+    // .to(".idea-2", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-3", 0.7, ideaTextTrans)
     .to(".idea-3 strong", 0.5, {
       scale: 1.2,
@@ -143,7 +143,7 @@ const animationTimeline = () => {
     .to(".idea-4", 0.7, ideaTextTransLeave, "+=1.5")
     .from(
       ".idea-5",
-      0.7,
+      1,
       {
         rotationX: 15,
         rotationZ: -10,
@@ -152,7 +152,7 @@ const animationTimeline = () => {
         z: 10,
         opacity: 0
       },
-      "+=0.5"
+      "+=1.5"
     )
     .to(
       ".idea-5 .smiley",
