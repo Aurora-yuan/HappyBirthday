@@ -9,9 +9,25 @@
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
   <link rel="stylesheet" href="style/style.css">
+  <style>
+    /* 赛博朋克风格的倒计时样式 */
+    #countdown {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 100px;
+      font-family: 'Orbitron', sans-serif;
+      color: #0f0;
+      text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
+      z-index: 9999;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- 倒计时容器 -->
+  <div id="countdown">准备好了吗，5</div>
   <div class="container">
     <div class="one">
       <h1 class="one">
@@ -25,7 +41,7 @@
     </div>
     <div class="four">
       <div class="text-box">
-        <p class="hbd-chatbox" data-node-name="textInChatBox" style="width: 700px; height: 100px; overflow-y: auto">Happy birthday to you!! Yeee! Many many happy blah...</p>
+        <p class="hbd-chatbox" data-node-name="textInChatBox" style="width: 600px; height: 100px;">Happy birthday to you!! Yeee! Many many happy blah...</p>
         <p class="fake-btn" data-node-name="sendButtonLabel">Send</p>
       </div>
     </div>
@@ -129,5 +145,24 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 <script type="application/javascript" src="script/main.js"></script>
+<script>
+  // 倒计时逻辑
+  let count = 5;
+  const countdownElement = document.getElementById('countdown');
+  const countdownInterval = setInterval(() => {
+    if (count > 0) {
+      countdownElement.textContent = `准备好了吗，${count}`;
+      count--;
+    } else {
+      clearInterval(countdownInterval);
+      countdownElement.style.display = 'none';
+      // 这里可以添加触发原有动画的逻辑，比如调用 animationTimeline 函数
+      // 假设 animationTimeline 函数在 main.js 中定义
+      if (typeof animationTimeline === 'function') {
+        animationTimeline();
+      }
+    }
+  }, 1000);
+</script>
 
 </html>
