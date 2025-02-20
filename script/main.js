@@ -114,6 +114,8 @@ const animationTimeline = () => {
       },
       0.05
     )
+    // 添加 3 秒延迟
+    .to({}, 3, {})
     .to(".fake-btn", 0.1, {
       backgroundColor: "rgb(127, 206, 248)"
     })
