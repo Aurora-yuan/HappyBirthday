@@ -168,23 +168,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 <script type="application/javascript" src="script/main.js"></script>
 <script>
-  // 倒计时逻辑
+  // 修改后的倒计时逻辑
   let count = 5;
   const countdownNumber = document.getElementById('countdown-number');
   const countdownContainer = document.getElementById('countdown-container');
-  const countdownInterval = setInterval(() => {
-    if (count > 0) {
-      countdownNumber.textContent = count;
-      count--;
-    } else {
-      clearInterval(countdownInterval);
-      countdownContainer.style.display = 'none';
-      // 倒计时结束后调用 fetchData 函数
-      if (typeof fetchData === 'function') {
-        fetchData();
+  
+  // 创建倒计时Promise
+  const countdownPromise = new Promise((resolve) => {
+    const countdownInterval = setInterval(() => {
+      if (count > 0) {
+        countdownNumber.textContent = count;
+        count--;
+      } else {
+        clearInterval(countdownInterval);
+        countdownContainer.style.display = 'none';
+        resolve(); // 倒计时完成时resolve
       }
-    }
-  }, 1000);
+    }, 1000);
+  });
+
+  // 顺序执行：倒计时 -> 加载数据 -> 运行动画
+  countdownPromise
+    .then(() => fetchData()) // 先加载数据
+    .catch(error => console.error('数据加载失败:', error));
 </script>
 
 </html>

@@ -3,14 +3,13 @@ const fetchData = () => {
   fetch("customize.json")
     .then(data => data.json())
     .then(data => {
-      // 提前声明 dataArr 变量
-      const dataArr = Object.keys(data);
+      dataArr = Object.keys(data);
       dataArr.map(customData => {
         if (data[customData] !== "") {
           if (customData === "imagePath") {
             document
-             .querySelector(`[data-node-name*="${customData}"]`)
-             .setAttribute("src", data[customData]);
+              .querySelector(`[data-node-name*="${customData}"]`)
+              .setAttribute("src", data[customData]);
           } else {
             document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
           }
@@ -18,9 +17,9 @@ const fetchData = () => {
 
         // Check if the iteration is over
         // Run amimation if so
-        if (dataArr.length === dataArr.indexOf(customData) + 1) {
+        if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
           animationTimeline();
-        }
+        } 
       });
     });
 };
@@ -31,10 +30,9 @@ const animationTimeline = () => {
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
 
-  // 修正 HTML 标签闭合问题
   textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
     .split("")
-    .join("</span><span>")}</span>`;
+    .join("</span><span>")}</span`;
 
   hbd.innerHTML = `<span>${hbd.innerHTML
     .split("")
@@ -64,10 +62,10 @@ const animationTimeline = () => {
       opacity: 0,
       y: 10
     })
-    // .from(".two", 0.4, {
-    //   opacity: 0,
-    //   y: 10
-    // })
+    .from(".two", 0.4, {
+      opacity: 0,
+      y: 10
+    })
     .to(
       ".one",
       0.7,
@@ -77,15 +75,15 @@ const animationTimeline = () => {
       },
       "+=2.5"
     )
-    // .to(
-    //   ".two",
-    //   0.7,
-    //   {
-    //     opacity: 0,
-    //     y: 10
-    //   },
-    //   "-=1"
-    // )
+    .to(
+      ".two",
+      0.7,
+      {
+        opacity: 0,
+        y: 10
+      },
+      "-=1"
+    )
     .from(".three", 0.7, {
       opacity: 0,
       y: 10
@@ -110,13 +108,13 @@ const animationTimeline = () => {
     })
     .staggerTo(
       ".hbd-chatbox span",
-      1,
+      0.5,
       {
         visibility: "visible"
       },
       0.05
     )
-    .to(".fake-btn", 1.5, {
+    .to(".fake-btn", 0.1, {
       backgroundColor: "rgb(127, 206, 248)"
     })
     .to(
@@ -129,10 +127,10 @@ const animationTimeline = () => {
       },
       "+=0.7"
     )
-    // .from(".idea-1", 0.7, ideaTextTrans)
-    // .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
-    // .from(".idea-2", 0.7, ideaTextTrans)
-    // .to(".idea-2", 0.7, ideaTextTransLeave, "+=1.5")
+    .from(".idea-1", 0.7, ideaTextTrans)
+    .to(".idea-1", 0.7, ideaTextTransLeave, "+=1.5")
+    .from(".idea-2", 0.7, ideaTextTrans)
+    .to(".idea-2", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-3", 0.7, ideaTextTrans)
     .to(".idea-3 strong", 0.5, {
       scale: 1.2,
