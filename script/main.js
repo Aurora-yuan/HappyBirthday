@@ -112,7 +112,7 @@ const animationTimeline = () => {
       {
         visibility: "visible"
       },
-      0.25
+      0.16
     )
     .to(".fake-btn", 3, {
       backgroundColor: "rgb(127, 206, 248)"
@@ -272,7 +272,7 @@ const animationTimeline = () => {
         visibility: "visible",
         opacity: 0,
         scale: 80,
-        repeat: 3,
+        repeat: 2,
         repeatDelay: 1.4
       },
       0.3
