@@ -41,6 +41,10 @@ body {
   font-size: 4.5rem;
 }
 
+.one span {
+  display: block;
+}
+
 .one > img {
   vertical-align: middle;
   margin-bottom: 10px;
